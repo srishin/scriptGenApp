@@ -71,7 +71,7 @@ class RulesController extends Controller
             ];
         }
         Triggers::insert($triggers);
-        return view('snippet',["token" => '<script src="'.env('APP_URL', 'http://localhost').'/task.js?id='.$rule->token.'></script>']);
+        return view('snippet',["token" => '<script src="'.env('APP_URL', 'http://localhost:8000').'/task.js?id='.$rule->token.'></script>']);
     }
 
     /**

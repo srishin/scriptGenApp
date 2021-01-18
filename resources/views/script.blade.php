@@ -8,15 +8,15 @@
         }
         switch(condition){
             case 'contains': return pathname.includes(uri) 
-            case:'equals': return `/uri` ==== 'pathname';
-            case: 'starts_with':return pathname.startsWith(`/uri`)
-            case: 'end_with':return pathname.endsWith(uri)
+            case 'equals': return `/${uri}` === pathname;
+            case 'starts_with':return pathname.startsWith(`/${uri}`)
+            case 'end_with':return pathname.endsWith(uri)
         }
     }
 
     let trigger = false;
     @foreach($triggers as $rule)
-    if(CheckURI({{$rule['uri']}},{{$rule['condition']}}, {{$rule['enable_alert']}})){
+    if(CheckURI("{{$rule['uri']}}","{{$rule['condition']}}", {{$rule['enable_alert']}})){
         trigger = true;
     }
     @endforeach
