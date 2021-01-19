@@ -20,5 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\RulesController::class, 'index'])->name('home');
-Route::resource('rule', App\Http\Controllers\RulesController::class);
+Route::get('rule', [App\Http\Controllers\RulesController::class,'index']);
+Route::post('rule', [App\Http\Controllers\RulesController::class,'store']);
 Route::get('/task.js', [App\Http\Controllers\FilesController::class,'index']);
